@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Subject:
+class Shop:
     def __init__(self):
         self._observers = []
 

@@ -1,53 +1,43 @@
-class House:
-    _house_xaracteristic = {
-        "count_walls" : None,
-        "count_windows" : None,
-        "roof" : None,
-        "trees" : None,
-        "Doors" : None
-    }
-    
+
     
 class Home_preparation:
     def __init__(self):
-    
-        self._house_xaracteristic = {
-            "count_walls" : 0,
-            "count_windows" : 0,
-            "roof" : None,
-            "trees" : None,
-            "Doors" : None
-        }
+        self.count_walls = None
+        self.count_windows = None
+        self.roof = None
+        self.trees = None
+        self.Doors = None
+        
    
     def create_walls(self, count):
-        self._house_xaracteristic["count_walls"] = count
+        self.count_walls = count
         
     def create_windows(self, count):
-        self._house_xaracteristic["count_windows"] = count
+        self.count_windows = count
     
     def create_roof(self, count):
-        self._house_xaracteristic["roof"] = count
+        self.roof = count
     
     def create_trees(self, count):
-        self._house_xaracteristic["trees"] = count
+        self.trees = count
         
     def create_doors(self, count):
-        self._house_xaracteristic["Doors"] = count
+        self.Doors = count
     
-    def view(self):
-        return self._house_xaracteristic
+    def __str__(self):
         
+        return str({key : value for (key, value) in self.__dict__.items() if value})
 
 
 created = Home_preparation()
 
 
-# created.create_doors(5)
-# created.create_roof(2)
+created.create_doors(5)
+created.create_roof(2)
 # created.create_trees(3)
 # created.create_windows(5)
 created.create_walls(3)
-created.view()
+print(created)
 
 
 
